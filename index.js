@@ -131,7 +131,8 @@ const ucebolunenlerintoplami = ucetambolunenler.reduce((toplam, sayi) => {
 console.log("3'e bölünenlerin toplamı: " + ucebolunenlerintoplami)
 
 //3d cozumu
-
+const besyuzdenkucuksayilar = sayilar.filter(sayi => sayi < 500);
+console.log(besyuzdenkucuksayilar);
 // 3e çözümü
 let siralisayilar=[];
 
