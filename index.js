@@ -85,16 +85,16 @@ console.log(CemberinAlani(15))
 		
 		3e. besyuzdenkucuksayilar dizisindeki sayıları küçükten büyüğe sıralayıp `siralisayilar` adındaki bir diziye aktarın (.sort metodunu kullanın)
 		
-		3f. `tekraredensayilar` adında bir dizi oluşturun. sayilar dizisi içerisindeki bazı sayılar birden fazla kere yazılmış. sayilar dizisi içerisinde birden fazla kez yazılmış sayıları tespit ederek kaç kere tekrar edildiğini belirten bir string oluşturulup `tekraredensayilar` dizisine aktarılmasını istiyoruz. Örnek string: "{sayı} sayısı {tekrarSayisi} kere tekrar edilmiştir"
+		3f. `tekraredensayilar` adında bir dizi oluşturun. sayilar dizisi içerisindeki bazı sayılar birden fazla kere yazılmış. 
+    sayilar dizisi içerisinde birden fazla kez yazılmış sayıları tespit ederek kaç kere tekrar edildiğini belirten bir string oluşturulup
+    `tekraredensayilar` dizisine aktarılmasını istiyoruz. Örnek string: "{sayı} sayısı {tekrarSayisi} kere tekrar edilmiştir"
 		ÖRNEK: sayilar dizisi içerisinde 45 sayısı 3 kere yazılmış. "45 sayısı 3 tekrar edilmiştir" stringini `tekraredensayilar` dizisine aktaracağız.
-		💡 İPUCU: Tekrar edilen sayıları ve kaç kere tekrar edildiğini kaydetmek için bir nesne tanımlamalısınız, bu görevi yapabilmek için en az 2 kere döngü yazmalısınız. Birinci döngüde hangi sayının kaç kere tekrar edildiğini tespit edip, 2. döngüde stringi oluşturup verilen diziye aktarmalısınız.
+		💡İPUCU: Tekrar edilen sayıları ve kaç kere tekrar edildiğini kaydetmek için bir nesne tanımlamalısınız, bu görevi yapabilmek
+     için en az 2 kere döngü yazmalısınız. Birinci döngüde hangi sayının kaç kere tekrar edildiğini tespit edip, 2. döngüde stringi oluşturup verilen diziye aktarmalısınız.
 */
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
-let asydf=0;
-
-let tekraredensayilar;
 
   //3a cozumu
 let enbuyuk=sayilar[0];
@@ -108,8 +108,7 @@ let enkucuk=sayilar[0];
     }
  }
 
- console.log(`En büyük sayı: ${enbuyuk}`);
-console.log(`En küçük sayı: ${enkucuk}`);
+ 
 
 
 // 3b çözümü:
@@ -119,7 +118,6 @@ if (Number.isInteger(sayi)&&sayi%3===0){
   ucetambolunenler.push(sayi);
 }
 });
-console.log("bakkkkkk"+ucetambolunenler);
 
 
 
@@ -128,18 +126,37 @@ const ucebolunenlerintoplami = ucetambolunenler.reduce((toplam, sayi) => {
   return toplam + sayi;
 },0);
 
-console.log("3'e bölünenlerin toplamı: " + ucebolunenlerintoplami)
+
 
 //3d cozumu
 const besyuzdenkucuksayilar = sayilar.filter(sayi => sayi < 500);
-console.log(besyuzdenkucuksayilar);
+
+
 // 3e çözümü
 let siralisayilar=[];
+siralisayilar=besyuzdenkucuksayilar.sort((a,b)=>a-b);
 
-
+//[3,3,3,5,5,7]
 // 3f çözümü
+let kacTekrar = {};
+let tekraredensayilar=[];
+for (let i=0; i<sayilar.length; i++){
+  let sayi = sayilar[i];
+if(kacTekrar[sayi]!==undefined){
+  kacTekrar[sayi]=kacTekrar[sayi]+1
 
-/* kodlar buraya */
+}else {  kacTekrar[sayi]=1
+}
+}
+
+for(let sayi in kacTekrar){
+  if(kacTekrar[sayi]>1){
+    let tekraredenstring=`${sayi} sayısı ${kacTekrar[sayi]} kere tekrar edilmiştir`
+    tekraredensayilar.push(tekraredenstring);
+  }
+
+}
+console.log(kacTekrar)
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
