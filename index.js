@@ -39,6 +39,7 @@ const sayilar = [
 function KareninAlani(kenaruzunlugu) {
   return kenaruzunlugu * kenaruzunlugu;
 }
+console.log(KareninAlani(10))
 
 /* (Oto test yok) Yukarıdaki KareninAlani fonksiyonunu kenar uzunluğu = 10 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -50,9 +51,10 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(radius) {
+return 2*pi*radius;
 }
+console.log(CemberinCevresi(5))
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -64,9 +66,10 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(radius) {
+  return pi*Math.pow(radius,2);
 }
+console.log(CemberinAlani(15))
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -89,33 +92,49 @@ function CemberinAlani(/* kodlar buraya */) {
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
-let ucetambolunenler,
-  enkucuk,
-  enbuyuk,
-  ucebolunenlerintoplami,
-  besyuzdenkucuksayilar,
-  siralisayilar,
-  tekraredensayilar;
 
-// 3a çözümü
 
-/* kodlar buraya */
+let tekraredensayilar;
+
+  //3a cozumu
+let enbuyuk=sayilar[0];
+let enkucuk=sayilar[0];
+ for (let i=1; i<sayilar.length; i++){
+    if (sayilar[i] > enbuyuk) {
+        enbuyuk = sayilar[i];
+    }
+    if (sayilar[i]< enkucuk) {
+        enkucuk =sayilar[i];
+    }
+ }
+
+ console.log(`En büyük sayı: ${enbuyuk}`);
+console.log(`En küçük sayı: ${enkucuk}`);
+
 
 // 3b çözümü:
+let ucetambolunenler=[];
+sayilar.forEach((sayi) => {
+if (Number.isInteger(sayi)&&sayi%3===0){
+  ucetambolunenler.push(sayi);
+}
+});
+console.log("bakkkkkk"+ucetambolunenler);
 
-/* kodlar buraya */
+
 
 // 3c çözümü:
+const ucebolunenlerintoplami = ucetambolunenler.reduce((toplam, sayi) => {
+  return toplam + sayi;
+},0);
 
-/* kodlar buraya */
+console.log("3'e bölünenlerin toplamı: " + ucebolunenlerintoplami)
 
-// 3d çözümü
-
-/* kodlar buraya */
+//3d cozumu
 
 // 3e çözümü
+let siralisayilar=[];
 
-/* kodlar buraya */
 
 // 3f çözümü
 
