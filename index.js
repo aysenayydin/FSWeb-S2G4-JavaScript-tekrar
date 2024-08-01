@@ -92,7 +92,7 @@ console.log(CemberinAlani(15))
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
-
+let asydf=0;
 
 let tekraredensayilar;
 
